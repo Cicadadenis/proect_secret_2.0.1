@@ -336,16 +336,16 @@ async def st(call: CallbackQuery):
 #async def cvb(call: CallbackQuery):
 @dp.callback_query_handler(text="go_start")
 async def broadcast_text_post(call: CallbackQuery):
-    if not await select_user(message.from_user.id):
-        await add_user(message.from_user.id)
-    stat, user = await select_statistic(), await select_user(message.from_user.id)
-    result_date = await get_user_date(message.from_user.id)
-    proxy = await select_user_proxy(message.from_user.id)
-    if not await select_user(message.from_user.id):
-        await add_user(message.from_user.id)
-    stat, user = await select_statistic(), await select_user(message.from_user.id)
-    result_date = await get_user_date(message.from_user.id)
-    proxy = await select_user_proxy(message.from_user.id)
+    if not await select_user(call.message.from_user.id):
+        await add_user(call.message.from_user.id)
+    stat, user = await select_statistic(), await select_user(call.message.from_user.id)
+    result_date = await get_user_date(call.message.from_user.id)
+    proxy = await select_user_proxy(call.message.from_user.id)
+    if not await select_user(call.message.from_user.id):
+        await add_user(call.message.from_user.id)
+    stat, user = await select_statistic(), await select_user(call.message.from_user.id)
+    result_date = await get_user_date(call.message.from_user.id)
+    proxy = await select_user_proxy(call.message.from_user.id)
     api_id = 16746278
     api_hash = "ca3a465d4b961e137addeb2e4f9b6581"  
     file_list = os.listdir('sessions')
