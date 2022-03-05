@@ -1,0 +1,7 @@
+telethon
+apscheduler
+environs
+aiosqlite
+aiogram
+pysocks
+proxy_checking
