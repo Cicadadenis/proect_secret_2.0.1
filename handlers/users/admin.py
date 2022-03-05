@@ -153,7 +153,7 @@ async def rep(call: CallbackQuery):
         except:
             
            
-            break
+            a = a + 1
     await call.message.answer(
                         f"💬     <b>Жалобы все отправленны</b> !!", reply_markup=back_to_main_menu)
 
