@@ -116,12 +116,13 @@ async def rep(call: CallbackQuery):
                 client = TelegramClient(f"sessions/{acaunt}", api_id, api_hash)
                 await client.connect()
             if mm <= 40:
+                
+                ssm = open('sms.txt', 'r', encoding="UTF-8").read()
+                zz = ssm.split('|')
+                sms = random.choice(zz)
+                ss = open('ussers.txt', 'r').readlines()
+                user = ss[a][:-1]
                 try:
-                    ssm = open('sms.txt', 'r', encoding="UTF-8").read()
-                    zz = ssm.split('|')
-                    sms = random.choice(zz)
-                    ss = open('ussers.txt', 'r').readlines()
-                    user = ss[a][:-1]
                     print('ok')
                     result = await client(functions.messages.ReportRequest(
                         peer= user,
